@@ -1,45 +1,65 @@
 <!DOCTYPE html>
-
-<html data-theme="light" lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Tool</title>
-<meta content="Convert all units: metric/imperial, temperature, speed, volume, area, data." name="description"/>
-<meta content="Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Tool" property="og:title"/>
-<meta content="Convert all units: metric/imperial, temperature, speed, volume, area, data." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="index, follow" name="robots"/>
-<meta content="2026-05-14" name="date"/>
-<link href="https://toolhive.app/unit-converter/" rel="canonical"/>
-<!-- Structured Data: WebApplication -->
-<script type="application/ld+json">{
+  <meta charset="UTF-8" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Tool</title>
+  <meta name="description" content="Convert all units: metric/imperial, temperature, speed, volume, area, data. Free, fast, and accurate unit converter (length, weight, temperature, speed…) — no sign-u" />
+  <meta property="og:title" content="Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Tool" />
+  <meta property="og:description" content="Convert all units: metric/imperial, temperature, speed, volume, area, data." />
+  <meta property="og:image" content="https://toolhive-onepagers.vercel.app/og/unit-converter.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://toolhive-onepagers.vercel.app/unit-converter/" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <meta name="date" content="2026-05-14" />
+  <link rel="canonical" href="https://toolhive-onepagers.vercel.app/unit-converter/" />
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">{
     "@context":"https://schema.org",
     "@type":"WebApplication",
     "name":"Unit Converter (Length, Weight, Temperature, Speed…)",
     "description":"Convert all units: metric/imperial, temperature, speed, volume, area, data.",
-    "url":"/unit-converter/",
+    "url":"https://toolhive-onepagers.vercel.app/unit-converter/",
     "applicationCategory":"UtilitiesApplication",
     "operatingSystem":"Any",
     "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
     "dateModified":"2026-05-14"
   }</script>
-<!-- BreadcrumbList -->
-<script type="application/ld+json">{
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">{
     "@context":"https://schema.org",
     "@type":"BreadcrumbList",
     "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"/"},
-      {"@type":"ListItem","position":2,"name":"Unit Converter (Length, Weight, Temperature, Speed…)","item":"/unit-converter/"}
+      {"@type":"ListItem","position":1,"name":"Home","item": "https://toolhive-onepagers.vercel.app/"},
+      {"@type":"ListItem","position":2,"name":"Unit Converter (Length, Weight, Temperature, Speed…)","item": "https://toolhive-onepagers.vercel.app/unit-converter/"}
     ]
   }</script>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<!-- Animate.css -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
-<style>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Tool" />
+  <meta name="twitter:description" content="Convert all units: metric/imperial, temperature, speed, volume, area, data." />
+  <meta name="twitter:image" content="https://toolhive-onepagers.vercel.app/og/unit-converter.png" />
+  <!-- Performance: preconnect to external CDNs -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <!-- Tailwind CSS CDN -->
+  <script>
+    // Must be set BEFORE tailwind loads so dark: utilities use class strategy
+    window.tailwind = window.tailwind || {};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
     :root {
       --brand: #2563eb;
       --brand-dark: #1e40af;
@@ -149,17 +169,30 @@
     /* ── Dark mode ── */
     #theme-toggle { cursor:pointer; }
     [data-theme="dark"] .bg-white { background:#1e293b !important; }
+    [data-theme="dark"] .bg-gray-800 { background:#0f172a !important; }
     [data-theme="dark"] .text-gray-900 { color:#f1f5f9 !important; }
     [data-theme="dark"] .text-gray-500 { color:#94a3b8 !important; }
     [data-theme="dark"] .text-gray-600 { color:#94a3b8 !important; }
     [data-theme="dark"] .text-gray-700 { color:#cbd5e1 !important; }
     [data-theme="dark"] .text-gray-800 { color:#e2e8f0 !important; }
+    [data-theme="dark"] .text-gray-300 { color:#e2e8f0 !important; }
     [data-theme="dark"] .bg-gray-50 { background:#0f172a !important; }
     [data-theme="dark"] .bg-gray-100 { background:#1e293b !important; }
+    [data-theme="dark"] .bg-gray-200 { background:#334155 !important; }
+    [data-theme="dark"] .bg-gray-700 { background:#1e293b !important; }
     [data-theme="dark"] .bg-blue-50 { background:#1e3a5f !important; }
     [data-theme="dark"] .text-blue-700 { color:#93c5fd !important; }
     [data-theme="dark"] .border-gray-200 { border-color:#334155 !important; }
+    [data-theme="dark"] .border-gray-300 { border-color:#475569 !important; }
     [data-theme="dark"] .shadow { box-shadow:0 2px 8px rgba(0,0,0,.5) !important; }
+    [data-theme="dark"] .shadow-xl { box-shadow:0 8px 32px rgba(0,0,0,.6) !important; }
+    /* ── Tool section: thematic gradient wrapper ── */
+    #tool { position:relative; }
+    .tool-card { background:rgba(255,255,255,0.95); border-radius:1.5rem; box-shadow:0 8px 32px rgba(37,99,235,.12),0 2px 8px rgba(0,0,0,.06); border:1px solid rgba(37,99,235,.08); }
+    [data-theme="dark"] .tool-card { background:#1e293b !important; border-color:rgba(99,179,237,.15) !important; box-shadow:0 8px 32px rgba(0,0,0,.4) !important; }
+    [data-theme="dark"] .tool-card label { color:#e2e8f0 !important; }
+    [data-theme="dark"] .tool-card p { color:#cbd5e1 !important; }
+    [data-theme="dark"] .tool-card h2, [data-theme="dark"] .tool-card h3 { color:#f1f5f9 !important; }
     /* ── Language select fix: force native dropdown to show dark text on light bg ── */
     #lang-select { color-scheme: normal; background-color: rgba(255,255,255,0.2); color: #fff; }
     #lang-select option { background-color: #1e293b; color: #f1f5f9; }
@@ -219,86 +252,132 @@
     /* ── Related tools hub text ── */
     .tool-hub-link { color:#374151 !important; }
     [data-theme="dark"] .tool-hub-link { color:#e2e8f0 !important; }
+    /* ══════════════════════════════════════════════════════════
+       GLOBAL TOOL SECTION THEMATIC UPGRADE
+       All section#tool get a beautiful gradient + card treatment
+       ══════════════════════════════════════════════════════════ */
+    section#tool.py-16.px-4.max-w-4xl.mx-auto,
+    section#tool.py-16.px-4 {
+      /* Override plain white sections — give them a gorgeous backdrop */
+      background: linear-gradient(160deg,#1e40af 0%,#2563eb 45%,#7c3aed 100%) !important;
+      max-width: 100% !important;
+      padding: 4rem 1rem !important;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Full-width gradient for any tool section without custom bg */
+    section#tool:not([style*="background"]) {
+      background: linear-gradient(160deg,#1e40af 0%,#2563eb 45%,#7c3aed 100%) !important;
+    }
+    /* Override section#tool h2 for white text on gradient */
+    section#tool > h2, section#tool > div > h2 {
+      color: #ffffff !important;
+    }
+    /* Tool inner card: make bg-white pop with glass morphism */
+    section#tool .bg-white,
+    section#tool .bg-white.dark\:bg-gray-800 {
+      background: rgba(255,255,255,0.97) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08) !important;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    [data-theme="dark"] section#tool .bg-white,
+    [data-theme="dark"] section#tool .bg-white.dark\:bg-gray-800 {
+      background: #1e293b !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5) !important;
+      border: 1px solid rgba(99,179,237,0.15);
+    }
+    /* Section title on gradient bg */
+    section#tool > h2.text-3xl, section#tool > h2.text-4xl {
+      color: #ffffff !important;
+    }
+    /* Section subtitle paragraph */
+    section#tool > p.text-center {
+      color: rgba(255,255,255,0.82) !important;
+    }
+    /* Decorative pseudo-circles */
+    section#tool:not([style*="background"])::before {
+      content:'';
+      position:absolute; width:380px; height:380px; border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      top:-100px; right:-80px; pointer-events:none; z-index:0;
+    }
+    section#tool:not([style*="background"])::after {
+      content:'';
+      position:absolute; width:220px; height:220px; border-radius:50%;
+      background:rgba(255,255,255,0.07);
+      bottom:-60px; left:-40px; pointer-events:none; z-index:0;
+    }
+    section#tool > * { position:relative; z-index:1; }
   </style>
-<link href="https://cdn.tailwindcss.com" rel="preconnect"/>
-  <link href="https://cdn.jsdelivr.net" rel="preconnect"/>
-  <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-  <meta content="https://toolhive.app/unit-converter/" property="og:url"/>
-  <meta content="https://toolhive.app/og-default.png" property="og:image"/>
-  <meta content="1200" property="og:image:width"/>
-  <meta content="630" property="og:image:height"/>
-  <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="@toolhive_app" name="twitter:site"/>
-  <meta content="Unit Converter (Length, Weight, Temperature, Speed…) – Free Online Too" name="twitter:title"/>
-  <meta content="Convert all units: metric/imperial, temperature, speed, volume, area, data." name="twitter:description"/>
-  <meta content="https://toolhive.app/og-default.png" name="twitter:image"/>
-  <meta content="ToolHive" name="author"/>
-  <meta content="#2563eb" name="theme-color"/>
-  <link href="https://cdn.tailwindcss.com" rel="dns-prefetch"/>
-  <link href="https://cdn.jsdelivr.net" rel="dns-prefetch"/>
-  <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
-  </head>
+</head>
 <body class="font-sans antialiased">
-<!-- NAV -->
-<nav class="sticky top-0 z-50 brand-gradient shadow-lg">
-<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
-<a class="text-white font-bold text-lg sm:text-xl tracking-tight" href="/">Unit Converter (Length, Weight, Temperature, Speed…)</a>
-<div class="flex items-center gap-2 flex-wrap">
-<a class="text-white/90 hover:text-white text-sm font-medium" href="#tool">Tool</a>
-<a class="text-white/90 hover:text-white text-sm font-medium" href="#articles">Articles</a>
-<!-- Language selector -->
-<select class="text-xs rounded px-2 py-1 cursor-pointer border border-white/30" id="lang-select" onchange="switchLanguage(this.value)" style="background:rgba(255,255,255,0.2);color:#fff;color-scheme:normal;">
-<option style="background:#1e293b;color:#f1f5f9;" value="en">🌐 EN</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="es">🇪🇸 ES</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="de">🇩🇪 DE</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="fr">🇫🇷 FR</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="pt">🇧🇷 PT</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="it">🇮🇹 IT</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="ru">🇷🇺 RU</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="ar">🇸🇦 AR</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="zh">🇨🇳 ZH</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="ja">🇯🇵 JA</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="hi">🇮🇳 HI</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="pl">🇵🇱 PL</option>
-<option style="background:#1e293b;color:#f1f5f9;" value="uk">🇺🇦 UA</option>
-</select>
-<!-- Hamburger / Hub menu -->
-<div class="relative">
-<button class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1 font-medium" onclick="document.getElementById('hub-menu').classList.toggle('hidden')">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 brand-gradient shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
+      <a href="/" class="text-white font-bold text-lg sm:text-xl tracking-tight">Unit Converter (Length, Weight, Temperature, Speed…)</a>
+      <div class="flex items-center gap-2 flex-wrap">
+        <a href="#tool" class="text-white/90 hover:text-white text-sm font-medium">Tool</a>
+        <a href="#articles" class="text-white/90 hover:text-white text-sm font-medium">Articles</a>
+        <!-- Language selector -->
+        <select id="lang-select" onchange="switchLanguage(this.value)"
+          class="text-xs rounded px-2 py-1 cursor-pointer border border-white/30"
+          style="background:rgba(255,255,255,0.2);color:#fff;color-scheme:normal;">
+          <option value="en" style="background:#1e293b;color:#f1f5f9;">🌐 EN</option>
+          <option value="es" style="background:#1e293b;color:#f1f5f9;">🇪🇸 ES</option>
+          <option value="de" style="background:#1e293b;color:#f1f5f9;">🇩🇪 DE</option>
+          <option value="fr" style="background:#1e293b;color:#f1f5f9;">🇫🇷 FR</option>
+          <option value="pt" style="background:#1e293b;color:#f1f5f9;">🇧🇷 PT</option>
+          <option value="it" style="background:#1e293b;color:#f1f5f9;">🇮🇹 IT</option>
+          <option value="ru" style="background:#1e293b;color:#f1f5f9;">🇷🇺 RU</option>
+          <option value="ar" style="background:#1e293b;color:#f1f5f9;">🇸🇦 AR</option>
+          <option value="zh" style="background:#1e293b;color:#f1f5f9;">🇨🇳 ZH</option>
+          <option value="ja" style="background:#1e293b;color:#f1f5f9;">🇯🇵 JA</option>
+          <option value="hi" style="background:#1e293b;color:#f1f5f9;">🇮🇳 HI</option>
+          <option value="pl" style="background:#1e293b;color:#f1f5f9;">🇵🇱 PL</option>
+          <option value="uk" style="background:#1e293b;color:#f1f5f9;">🇺🇦 UA</option>
+        </select>
+        <!-- Hamburger / Hub menu -->
+        <div class="relative">
+          <button onclick="document.getElementById('hub-menu').classList.toggle('hidden')"
+            class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1 font-medium">
             ☰ More Tools
           </button>
-<div class="hidden absolute right-0 top-10 w-72 shadow-2xl rounded-2xl p-4 z-50 grid grid-cols-2 gap-2 text-sm" id="hub-menu" style="background:#fff;">
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/weather-forecast/">🌤 Weather</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/currency-converter/">💱 Currency</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/time-zone-converter/">🕐 Time Zones</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/unit-converter/">📐 Units</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/bmi-calorie-calculator/">⚖️ BMI</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/body-fat-calculator/">💪 Body Fat</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/calories-burned-calculator/">🔥 Cal. Burned</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/diet-meal-planner/">🥗 Diet Planner</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/water-intake-calculator/">💧 Water</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/sleep-calculator/">😴 Sleep</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/mortgage-calculator/">🏠 Mortgage</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/compound-interest-calculator/">📈 Investing</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/loan-calculator/">💳 Loan</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/percentage-calculator/">% Percentage</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/tip-calculator/">🍽 Tip</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/countdown-timer/">⏱ Countdown</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/age-calculator/">🎂 Age</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/gpa-calculator/">🎓 GPA</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/due-date-calculator/">👶 Due Date</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/language-translator/">🌍 Translator</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/scientific-calculator/">🔬 Sci. Calc</a>
-<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/internet-speed-test/">🚀 Speed Test</a>
-</div>
-</div>
-<button class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1" id="theme-toggle" onclick="toggleTheme()">
+          <div id="hub-menu"
+            class="hidden absolute right-0 top-10 w-72 shadow-2xl rounded-2xl p-4 z-50 grid grid-cols-2 gap-2 text-sm"
+            style="background:#fff;">
+            <a href="/weather-forecast/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🌤 Weather</a>
+            <a href="/currency-converter/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">💱 Currency</a>
+            <a href="/time-zone-converter/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🕐 Time Zones</a>
+            <a href="/unit-converter/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">📐 Units</a>
+            <a href="/bmi-calorie-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">⚖️ BMI</a>
+            <a href="/body-fat-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">💪 Body Fat</a>
+            <a href="/calories-burned-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🔥 Cal. Burned</a>
+            <a href="/diet-meal-planner/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🥗 Diet Planner</a>
+            <a href="/water-intake-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">💧 Water</a>
+            <a href="/sleep-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">😴 Sleep</a>
+            <a href="/mortgage-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🏠 Mortgage</a>
+            <a href="/compound-interest-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">📈 Investing</a>
+            <a href="/loan-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">💳 Loan</a>
+            <a href="/percentage-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">% Percentage</a>
+            <a href="/tip-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🍽 Tip</a>
+            <a href="/countdown-timer/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">⏱ Countdown</a>
+            <a href="/age-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🎂 Age</a>
+            <a href="/gpa-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🎓 GPA</a>
+            <a href="/due-date-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">👶 Due Date</a>
+            <a href="/language-translator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🌍 Translator</a>
+            <a href="/scientific-calculator/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🔬 Sci. Calc</a>
+            <a href="/internet-speed-test/" class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium">🚀 Speed Test</a>
+          </div>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()"
+          class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1">
           🌙 Dark
         </button>
-</div>
-</div>
-</nav>
-<script>
+      </div>
+    </div>
+  </nav>
+  <script>
   // Sync hub-menu bg/text to current theme
   function _syncHubMenu() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -396,74 +475,82 @@
     else document.body.removeAttribute('dir');
   }
   </script>
-<!-- HERO -->
-<section class="brand-gradient text-white py-16 sm:py-20 px-4 text-center animate__animated animate__fadeIn">
-<div class="max-w-4xl mx-auto">
-<div class="text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4 opacity-80">Free Online Tool</div>
-<h1 class="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight">Unit Converter (Length, Weight, Temperature, Speed…)</h1>
-<p class="text-base sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto hero-desc">Convert all units: metric/imperial, temperature, speed, volume, area, data.</p>
-<div class="flex flex-wrap justify-center gap-3 mb-8">
-<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ 100% Free</span>
-<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ No Sign-up</span>
-<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Real-time Data</span>
-<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Better than unitconverters.net</span>
-</div>
-<a class="cta-pulse inline-block bg-white text-blue-700 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg shadow-xl" href="#tool">
+
+  <!-- HERO -->
+  <section class="brand-gradient text-white py-16 sm:py-20 px-4 text-center animate__animated animate__fadeIn">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4 opacity-80">Free Online Tool</div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight">Unit Converter (Length, Weight, Temperature, Speed…)</h1>
+      <p class="text-base sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto hero-desc">Convert all units: metric/imperial, temperature, speed, volume, area, data.</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ 100% Free</span>
+        <span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ No Sign-up</span>
+        <span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Real-time Data</span>
+        <span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Better than unitconverters.net</span>
+      </div>
+      <a href="#tool" class="cta-pulse inline-block bg-white text-blue-700 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg shadow-xl">
         Use Free Tool ↓
       </a>
-</div>
-</section>
-<!-- STATS BAR -->
-<section class="bg-white dark:bg-gray-800 shadow-sm py-8">
-<div class="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center px-4">
-<div class="fade-up">
-<div class="text-4xl font-extrabold text-blue-600 counter" data-target="7200K+">0</div>
-<div class="text-sm text-gray-500 mt-1">Monthly Users</div>
-</div>
-<div class="fade-up">
-<div class="text-4xl font-extrabold text-green-500 counter" data-target="4.9★">0</div>
-<div class="text-sm text-gray-500 mt-1">User Rating</div>
-</div>
-<div class="fade-up">
-<div class="text-4xl font-extrabold text-purple-500 counter" data-target="24/7">-</div>
-<div class="text-sm text-gray-500 mt-1">Live Updates</div>
-</div>
-</div>
-</section>
-<!-- UNIT CONVERTER TOOL -->
-<section class="py-16 px-4 max-w-4xl mx-auto" id="tool">
-<h2 class="text-3xl font-bold text-center mb-8">📐 Universal Unit Converter</h2>
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-<!-- Category tabs -->
-<div class="flex flex-wrap gap-2 mb-6" id="unit-tabs">
-<button class="tab-btn active px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white" onclick="setCategory('length')">📏 Length</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('weight')">⚖️ Weight</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('temperature')">🌡 Temp</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('speed')">🚀 Speed</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('volume')">🫙 Volume</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('area')">⬜ Area</button>
-<button class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700" onclick="setCategory('data')">💾 Data</button>
-</div>
-<div class="grid sm:grid-cols-3 gap-4 items-end mb-6">
-<div>
-<label class="block text-sm font-medium mb-1">Value</label>
-<input class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 text-lg focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white" id="unit-value" oninput="doConvert()" type="number" value="1"/>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">From</label>
-<select class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white" id="unit-from" onchange="doConvert()"></select>
-</div>
-<div>
-<label class="block text-sm font-medium mb-1">To</label>
-<select class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white" id="unit-to" onchange="doConvert()"></select>
-</div>
-</div>
-<div class="text-center py-6 bg-blue-50 dark:bg-gray-700 rounded-xl text-3xl font-extrabold text-blue-700" id="unit-result"></div>
-<!-- Quick reference table -->
-<div class="mt-8 overflow-x-auto" id="unit-table"></div>
-</div>
-</section>
-<script>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-white dark:bg-gray-800 shadow-sm py-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center px-4">
+      <div class="fade-up">
+        <div class="text-4xl font-extrabold text-blue-600 counter"
+             data-target="7200K+">0</div>
+        <div class="text-sm text-gray-500 mt-1">Monthly Users</div>
+      </div>
+      <div class="fade-up">
+        <div class="text-4xl font-extrabold text-green-500 counter" data-target="4.9★">0</div>
+        <div class="text-sm text-gray-500 mt-1">User Rating</div>
+      </div>
+      <div class="fade-up">
+        <div class="text-4xl font-extrabold text-purple-500 counter" data-target="24/7">-</div>
+        <div class="text-sm text-gray-500 mt-1">Live Updates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIT CONVERTER TOOL -->
+  <section id="tool" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">📐 Universal Unit Converter</h2>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <!-- Category tabs -->
+      <div class="flex flex-wrap gap-2 mb-6" id="unit-tabs">
+        <button onclick="setCategory('length')" class="tab-btn active px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white">📏 Length</button>
+        <button onclick="setCategory('weight')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">⚖️ Weight</button>
+        <button onclick="setCategory('temperature')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">🌡 Temp</button>
+        <button onclick="setCategory('speed')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">🚀 Speed</button>
+        <button onclick="setCategory('volume')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">🫙 Volume</button>
+        <button onclick="setCategory('area')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">⬜ Area</button>
+        <button onclick="setCategory('data')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700">💾 Data</button>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4 items-end mb-6">
+        <div>
+          <label class="block text-sm font-medium mb-1">Value</label>
+          <input id="unit-value" type="number" value="1"
+            class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 text-lg focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white"
+            oninput="doConvert()" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">From</label>
+          <select id="unit-from" class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white"
+            onchange="doConvert()"></select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">To</label>
+          <select id="unit-to" class="w-full border-2 border-blue-300 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-600 dark:bg-gray-700 dark:text-white"
+            onchange="doConvert()"></select>
+        </div>
+      </div>
+      <div id="unit-result" class="text-center py-6 bg-blue-50 dark:bg-gray-700 rounded-xl text-3xl font-extrabold text-blue-700"></div>
+      <!-- Quick reference table -->
+      <div id="unit-table" class="mt-8 overflow-x-auto"></div>
+    </div>
+  </section>
+  <script>
   const UNITS = {
     length: {
       meter:{f:1,l:'Meter (m)'},kilometer:{f:1000,l:'Kilometer (km)'},centimeter:{f:.01,l:'Centimeter (cm)'},
@@ -569,220 +656,231 @@
 
   window.addEventListener('DOMContentLoaded', () => { populateSelects(); doConvert(); });
   </script>
-<!-- CONTEXTUAL: Fun size comparisons -->
-<section class="py-14 px-4 bg-gradient-to-br from-violet-600 to-purple-800 relative overflow-hidden">
-<div class="max-w-5xl mx-auto relative z-10">
-<h2 class="text-3xl font-bold text-white text-center mb-2 fade-up">📏 Fun Size Comparisons</h2>
-<p class="text-white/80 text-center mb-8 fade-up">Put numbers in perspective</p>
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-<div class="glass rounded-2xl p-5 text-center fade-up">
-<div class="text-4xl mb-2 float-anim">🗼</div>
-<div class="text-white font-bold">Eiffel Tower</div>
-<div class="text-purple-200 text-sm">330 m · 1,083 ft</div>
-</div>
-<div class="glass rounded-2xl p-5 text-center fade-up">
-<div class="text-4xl mb-2 float-anim" style="animation-delay:.5s">🏟</div>
-<div class="text-white font-bold">Football Field</div>
-<div class="text-purple-200 text-sm">100 m · 328 ft</div>
-</div>
-<div class="glass rounded-2xl p-5 text-center fade-up">
-<div class="text-4xl mb-2 float-anim" style="animation-delay:1s">🐋</div>
-<div class="text-white font-bold">Blue Whale</div>
-<div class="text-purple-200 text-sm">33 m · 108 ft</div>
-</div>
-<div class="glass rounded-2xl p-5 text-center fade-up">
-<div class="text-4xl mb-2 float-anim" style="animation-delay:1.5s">🚌</div>
-<div class="text-white font-bold">London Bus</div>
-<div class="text-purple-200 text-sm">11 m · 36 ft</div>
-</div>
-</div>
-<div class="mt-8 bg-white/10 rounded-2xl p-5 fade-up">
-<h3 class="text-white font-bold mb-3 text-center">🌡 Quick Temperature Reference</h3>
-<div class="flex flex-wrap justify-center gap-3">
-<span class="bg-blue-500/50 text-white px-3 py-1 rounded-full text-sm">❄️ Water freezes: 0°C / 32°F</span>
-<span class="bg-green-500/50 text-white px-3 py-1 rounded-full text-sm">🌡 Body temp: 37°C / 98.6°F</span>
-<span class="bg-red-500/50 text-white px-3 py-1 rounded-full text-sm">🔥 Water boils: 100°C / 212°F</span>
-<span class="bg-orange-500/50 text-white px-3 py-1 rounded-full text-sm">☀️ Oven roast: 180°C / 356°F</span>
-</div>
-</div>
-</div>
-</section>
-<!-- ENTERTAINMENT / FUN FACTS -->
-<section class="py-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-2">🤩 Did You Know?</h2>
-<p class="text-center text-gray-500 mb-8">Fascinating facts about unit converter (length, weight, temperature, speed…)</p>
-<div class="grid sm:grid-cols-2 gap-4">
-<div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">📏</span><p class="text-sm text-gray-600 dark:text-gray-300">A light-year is about 9.46 trillion kilometres.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">⚖️</span><p class="text-sm text-gray-600 dark:text-gray-300">The kilogram was redefined in 2019 using Planck's constant.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🌡️</span><p class="text-sm text-gray-600 dark:text-gray-300">Absolute zero (0 Kelvin) is −273.15°C — the coldest possible temperature.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🚀</span><p class="text-sm text-gray-600 dark:text-gray-300">Escape velocity from Earth is about 11.2 km/s (40,320 km/h).</p></div>
-</div>
-</div>
-</section>
-<!-- RECOMMENDED SERVICES & AFFILIATES -->
-<section class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
-<div class="max-w-5xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">⭐ Recommended Services</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 section-sub">Handpicked to complement your experience — save money today</p>
-<div class="grid sm:grid-cols-3 gap-6">
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 fade-up aff-card">
-<div class="flex items-center justify-between mb-3">
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Amazon Tools</h3>
-<span class="text-green-700 dark:text-green-400 font-bold text-xs bg-green-100 dark:bg-green-900/30 rounded-full px-3 py-1">Best Deals</span>
-</div>
-<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Precision measurement tools, scales and converters.</p>
-<a class="block text-center brand-gradient text-white font-bold py-3 rounded-xl hover:opacity-90 transition" href="https://www.amazon.com/measuring-tools/s?k=measuring+tools" rel="sponsored noopener" target="_blank">Shop Measurement Tools <span class="affiliate-badge">AD</span></a>
-</div></div>
-<p class="text-center text-xs text-gray-400 mt-6">
+
+  <!-- CONTEXTUAL: Fun size comparisons -->
+  <section class="py-14 px-4 bg-gradient-to-br from-violet-600 to-purple-800 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto relative z-10">
+      <h2 class="text-3xl font-bold text-white text-center mb-2 fade-up">📏 Fun Size Comparisons</h2>
+      <p class="text-white/80 text-center mb-8 fade-up">Put numbers in perspective</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass rounded-2xl p-5 text-center fade-up">
+          <div class="text-4xl mb-2 float-anim">🗼</div>
+          <div class="text-white font-bold">Eiffel Tower</div>
+          <div class="text-purple-200 text-sm">330 m · 1,083 ft</div>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center fade-up">
+          <div class="text-4xl mb-2 float-anim" style="animation-delay:.5s">🏟</div>
+          <div class="text-white font-bold">Football Field</div>
+          <div class="text-purple-200 text-sm">100 m · 328 ft</div>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center fade-up">
+          <div class="text-4xl mb-2 float-anim" style="animation-delay:1s">🐋</div>
+          <div class="text-white font-bold">Blue Whale</div>
+          <div class="text-purple-200 text-sm">33 m · 108 ft</div>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center fade-up">
+          <div class="text-4xl mb-2 float-anim" style="animation-delay:1.5s">🚌</div>
+          <div class="text-white font-bold">London Bus</div>
+          <div class="text-purple-200 text-sm">11 m · 36 ft</div>
+        </div>
+      </div>
+      <div class="mt-8 bg-white/10 rounded-2xl p-5 fade-up">
+        <h3 class="text-white font-bold mb-3 text-center">🌡 Quick Temperature Reference</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="bg-blue-500/50 text-white px-3 py-1 rounded-full text-sm">❄️ Water freezes: 0°C / 32°F</span>
+          <span class="bg-green-500/50 text-white px-3 py-1 rounded-full text-sm">🌡 Body temp: 37°C / 98.6°F</span>
+          <span class="bg-red-500/50 text-white px-3 py-1 rounded-full text-sm">🔥 Water boils: 100°C / 212°F</span>
+          <span class="bg-orange-500/50 text-white px-3 py-1 rounded-full text-sm">☀️ Oven roast: 180°C / 356°F</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ENTERTAINMENT / FUN FACTS -->
+  <section class="py-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">🤩 Did You Know?</h2>
+      <p class="text-center text-gray-500 mb-8">Fascinating facts about unit converter (length, weight, temperature, speed…)</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">📏</span><p class="text-sm text-gray-600 dark:text-gray-300">A light-year is about 9.46 trillion kilometres.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">⚖️</span><p class="text-sm text-gray-600 dark:text-gray-300">The kilogram was redefined in 2019 using Planck's constant.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🌡️</span><p class="text-sm text-gray-600 dark:text-gray-300">Absolute zero (0 Kelvin) is −273.15°C — the coldest possible temperature.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🚀</span><p class="text-sm text-gray-600 dark:text-gray-300">Escape velocity from Earth is about 11.2 km/s (40,320 km/h).</p></div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- RECOMMENDED SERVICES & AFFILIATES -->
+  <section class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">⭐ Recommended Services</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-8 section-sub">Handpicked to complement your experience — save money today</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 fade-up aff-card">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Amazon Tools</h3>
+        <span class="text-green-700 dark:text-green-400 font-bold text-xs bg-green-100 dark:bg-green-900/30 rounded-full px-3 py-1">Best Deals</span>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Precision measurement tools, scales and converters.</p>
+      <a href="https://www.amazon.com/measuring-tools/s?k=measuring+tools" class="block text-center brand-gradient text-white font-bold py-3 rounded-xl hover:opacity-90 transition"
+         rel="sponsored noopener" target="_blank">Shop Measurement Tools <span class="affiliate-badge">AD</span></a>
+    </div></div>
+      <p class="text-center text-xs text-gray-400 mt-6">
         ✦ Affiliate disclosure: some links earn us a small commission at no extra cost to you. We only recommend services we trust.
       </p>
-</div>
-</section>
-<!-- ARTICLES / NEWS -->
-<section class="py-16 px-4 max-w-5xl mx-auto" id="articles">
-<h2 class="text-3xl font-bold text-center mb-2">📰 Latest News</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8">Fresh headlines on unit converter (length, weight, temperature, speed…)</p>
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
-<img alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" src="https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6cb5/live/51be1d40-43ed-11f1-ac78-2112837ce2aa.jpg"/>
-<div class="p-4">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">BBC News</span>
-<span class="text-xs text-gray-400">Wed, 29 Apr 2026</span>
-</div>
-<h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Global forest loss slows but El Niño fires could threaten progress</h3>
-<p class="text-gray-500 text-xs mb-3 line-clamp-3">The loss of tropical rainforests eased last year, according to new analysis, but scientists warn they are still disappearing rapidly.</p>
-<a class="text-blue-600 text-xs font-medium hover:underline" href="https://www.bbc.com/news/articles/c78q5pygn66o?at_medium=RSS&amp;at_campaign=rss" rel="noopener" target="_blank">Read more →</a>
-</div>
-</article>
-<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
-<img alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" src="https://i.guim.co.uk/img/media/9a146b6d97d90aeb51e5fe72dea53cf1e82407de/335_0_5000_4000/master/5000.jpg?width=140&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=ded945ed2ddc70372541b0e25090ff71"/>
-<div class="p-4">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
-<span class="text-xs text-gray-400">Wed, 13 May 2026</span>
-</div>
-<h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Neanderthals used stone drills to treat cavities 59,000 years ago, tooth suggests</h3>
-<p class="text-gray-500 text-xs mb-3 line-clamp-3">Molar found in Siberia features deep hole that appears to show earliest known evidence of dental treatment Neanderthals used stone drills to</p>
-<a class="text-blue-600 text-xs font-medium hover:underline" href="https://www.theguardian.com/science/2026/may/13/neanderthals-stone-drills-treat-cavities-tooth-siberia-dentist" rel="noopener" target="_blank">Read more →</a>
-</div>
-</article>
-<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
-<img alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" src="https://i.guim.co.uk/img/media/6403ead2c9f076a34f67085fd177febdbd5bc8d4/0_0_6636_5309/master/6636.jpg?width=140&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=dc764f44821b0d8987075eac3e392e9b"/>
-<div class="p-4">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
-<span class="text-xs text-gray-400">Wed, 13 May 2026</span>
-</div>
-<h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Obesity rates in some countries levelling off or potentially falling, study finds</h3>
-<p class="text-gray-500 text-xs mb-3 line-clamp-3">Researchers say rise not inevitable and it is important to unpick what is behind differences in obesity trends A continuing rise in obesity </p>
-<a class="text-blue-600 text-xs font-medium hover:underline" href="https://www.theguardian.com/society/2026/may/13/obesity-trends-levelling-off-falling-study" rel="noopener" target="_blank">Read more →</a>
-</div>
-</article>
-<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
-<img alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" src="https://i.guim.co.uk/img/media/f15fe77bb8b959a21f3d7466293ba38d58fc2fad/42_0_1266_1013/master/1266.jpg?width=140&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=cad9d4b6cdb8ca28de2b54e6e5b97d92"/>
-<div class="p-4">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
-<span class="text-xs text-gray-400">Wed, 13 May 2026</span>
-</div>
-<h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Do we judge people by the way they sound? How accents shape our lives</h3>
-<p class="text-gray-500 text-xs mb-3 line-clamp-3">A new book by linguistics professor Valerie Fridland, who was raised in Memphis by parents with French accents, explores the power behind th</p>
-<a class="text-blue-600 text-xs font-medium hover:underline" href="https://www.theguardian.com/science/2026/may/13/valerie-fridland-linguistics-accents" rel="noopener" target="_blank">Read more →</a>
-</div>
-</article></div>
-</section>
-<!-- FAQ -->
-<section class="py-16 px-4 max-w-3xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-<div>
-<div class="border-b dark:border-gray-700 pb-4">
-<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
-<span class="text-gray-800 dark:text-white">Is this unit converter (length, weight, temperature, speed…) tool free?</span>
-<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
-</button>
-<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Yes, 100% free with no sign-up required.</p>
-</div>
-<div class="border-b dark:border-gray-700 pb-4">
-<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
-<span class="text-gray-800 dark:text-white">How accurate is the unit converter (length, weight, temperature, speed…)?</span>
-<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
-</button>
-<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">We use the latest APIs and data sources updated in real time.</p>
-</div>
-<div class="border-b dark:border-gray-700 pb-4">
-<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
-<span class="text-gray-800 dark:text-white">Can I use this on mobile?</span>
-<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
-</button>
-<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Absolutely — fully responsive, works on all devices.</p>
-</div>
-<div class="border-b dark:border-gray-700 pb-4">
-<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
-<span class="text-gray-800 dark:text-white">Does it work offline?</span>
-<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
-</button>
-<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">An internet connection is needed for live data.</p>
-</div></div>
-</section>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this unit converter (length, weight, temperature, speed\u2026) tool free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free with no sign-up required."}}, {"@type": "Question", "name": "How accurate is the unit converter (length, weight, temperature, speed\u2026)?", "acceptedAnswer": {"@type": "Answer", "text": "We use the latest APIs and data sources updated in real time."}}, {"@type": "Question", "name": "Can I use this on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely \u2014 fully responsive, works on all devices."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "An internet connection is needed for live data."}}]}</script>
-<!-- RELATED TOOLS HUB -->
-<section class="py-12 px-4 bg-gray-50 dark:bg-gray-900">
-<div class="max-w-5xl mx-auto">
-<h2 class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">🔧 More Free Tools</h2>
-<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="weather-forecast">🌤<br/>Weather</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="currency-converter">💱<br/>Currency</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="time-zone-converter">🕐<br/>Time Zones</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="unit-converter">📐<br/>Unit Convert</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="bmi-calorie-calculator">⚖️<br/>BMI</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="body-fat-calculator">💪<br/>Body Fat</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="calories-burned-calculator">🔥<br/>Cal Burned</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="diet-meal-planner">🥗<br/>Diet Plan</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="water-intake-calculator">💧<br/>Water</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="sleep-calculator">😴<br/>Sleep</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="mortgage-calculator">🏠<br/>Mortgage</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="loan-calculator">💳<br/>Loan</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="compound-interest-calculator">📈<br/>Invest</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="percentage-calculator">%<br/>Percent</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="tip-calculator">🍽<br/>Tip Calc</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="countdown-timer">⏱<br/>Countdown</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="age-calculator">🎂<br/>Age Calc</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="language-translator">🌍<br/>Translator</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="scientific-calculator">🔬<br/>Sci Calc</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="internet-speed-test">🚀<br/>Speed Test</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="gpa-calculator">🎓<br/>GPA Calc</a>
-<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="due-date-calculator">👶<br/>Due Date</a>
-</div>
-</div>
-</section>
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white py-12 px-4">
-<div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8">
-<div>
-<div class="font-bold text-xl mb-3">Unit Converter (Length, Weight, Temperature, Speed…)</div>
-<p class="text-gray-400 text-sm">Convert all units: metric/imperial, temperature, speed, volume, area, data.</p>
-</div>
-<div>
-<div class="font-bold mb-3">Quick Links</div>
-<ul class="space-y-1 text-gray-400 text-sm">
-<li><a class="hover:text-white" href="#tool">Use Tool</a></li>
-<li><a class="hover:text-white" href="#articles">Articles</a></li>
-</ul>
-</div>
-<div>
-<div class="font-bold mb-3">Legal</div>
-<ul class="space-y-1 text-gray-400 text-sm">
-<li><a class="hover:text-white" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-white" href="#">Terms of Service</a></li>
-<li><a class="hover:text-white" href="#">Affiliate Disclosure</a></li>
-<li><a class="hover:text-white" href="#">Contact</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+    </div>
+  </section>
+
+  <!-- ARTICLES / NEWS -->
+  <section id="articles" class="py-16 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-2">📰 Latest News</h2>
+    <p class="text-center text-gray-500 dark:text-gray-400 mb-8">Fresh headlines on unit converter (length, weight, temperature, speed…)</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
+      <img src="https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6cb5/live/51be1d40-43ed-11f1-ac78-2112837ce2aa.jpg" alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" />
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">BBC News</span>
+          <span class="text-xs text-gray-400">Wed, 29 Apr 2026</span>
+        </div>
+        <h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Global forest loss slows but El Niño fires could threaten progress</h3>
+        <p class="text-gray-500 text-xs mb-3 line-clamp-3">The loss of tropical rainforests eased last year, according to new analysis, but scientists warn they are still disappearing rapidly.</p>
+        <a href="https://www.bbc.com/news/articles/c78q5pygn66o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener" class="text-blue-600 text-xs font-medium hover:underline">Read more →</a>
+      </div>
+    </article>
+    <article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
+      <img src="https://i.guim.co.uk/img/media/9a146b6d97d90aeb51e5fe72dea53cf1e82407de/335_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=ded945ed2ddc70372541b0e25090ff71" alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" />
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
+          <span class="text-xs text-gray-400">Wed, 13 May 2026</span>
+        </div>
+        <h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Neanderthals used stone drills to treat cavities 59,000 years ago, tooth suggests</h3>
+        <p class="text-gray-500 text-xs mb-3 line-clamp-3">Molar found in Siberia features deep hole that appears to show earliest known evidence of dental treatment Neanderthals used stone drills to</p>
+        <a href="https://www.theguardian.com/science/2026/may/13/neanderthals-stone-drills-treat-cavities-tooth-siberia-dentist" target="_blank" rel="noopener" class="text-blue-600 text-xs font-medium hover:underline">Read more →</a>
+      </div>
+    </article>
+    <article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
+      <img src="https://i.guim.co.uk/img/media/6403ead2c9f076a34f67085fd177febdbd5bc8d4/0_0_6636_5309/master/6636.jpg?width=140&quality=85&auto=format&fit=max&s=dc764f44821b0d8987075eac3e392e9b" alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" />
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
+          <span class="text-xs text-gray-400">Wed, 13 May 2026</span>
+        </div>
+        <h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Obesity rates in some countries levelling off or potentially falling, study finds</h3>
+        <p class="text-gray-500 text-xs mb-3 line-clamp-3">Researchers say rise not inevitable and it is important to unpick what is behind differences in obesity trends A continuing rise in obesity </p>
+        <a href="https://www.theguardian.com/society/2026/may/13/obesity-trends-levelling-off-falling-study" target="_blank" rel="noopener" class="text-blue-600 text-xs font-medium hover:underline">Read more →</a>
+      </div>
+    </article>
+    <article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up overflow-hidden">
+      <img src="https://i.guim.co.uk/img/media/f15fe77bb8b959a21f3d7466293ba38d58fc2fad/42_0_1266_1013/master/1266.jpg?width=140&quality=85&auto=format&fit=max&s=cad9d4b6cdb8ca28de2b54e6e5b97d92" alt="" class="w-full h-32 object-cover rounded-t-xl mb-3" loading="lazy" />
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Science | The Guardian</span>
+          <span class="text-xs text-gray-400">Wed, 13 May 2026</span>
+        </div>
+        <h3 class="font-bold text-gray-900 dark:text-white mb-2 text-sm line-clamp-2">Do we judge people by the way they sound? How accents shape our lives</h3>
+        <p class="text-gray-500 text-xs mb-3 line-clamp-3">A new book by linguistics professor Valerie Fridland, who was raised in Memphis by parents with French accents, explores the power behind th</p>
+        <a href="https://www.theguardian.com/science/2026/may/13/valerie-fridland-linguistics-accents" target="_blank" rel="noopener" class="text-blue-600 text-xs font-medium hover:underline">Read more →</a>
+      </div>
+    </article></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-4 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+    <div>
+    <div class="border-b dark:border-gray-700 pb-4">
+      <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'"
+        class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4">
+        <span class="text-gray-800 dark:text-white">Is this unit converter (length, weight, temperature, speed…) tool free?</span>
+        <span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+      </button>
+      <p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Yes, 100% free with no sign-up required.</p>
+    </div>
+    <div class="border-b dark:border-gray-700 pb-4">
+      <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'"
+        class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4">
+        <span class="text-gray-800 dark:text-white">How accurate is the unit converter (length, weight, temperature, speed…)?</span>
+        <span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+      </button>
+      <p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">We use the latest APIs and data sources updated in real time.</p>
+    </div>
+    <div class="border-b dark:border-gray-700 pb-4">
+      <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'"
+        class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4">
+        <span class="text-gray-800 dark:text-white">Can I use this on mobile?</span>
+        <span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+      </button>
+      <p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Absolutely — fully responsive, works on all devices.</p>
+    </div>
+    <div class="border-b dark:border-gray-700 pb-4">
+      <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'"
+        class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4">
+        <span class="text-gray-800 dark:text-white">Does it work offline?</span>
+        <span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+      </button>
+      <p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">An internet connection is needed for live data.</p>
+    </div></div>
+  </section>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this unit converter (length, weight, temperature, speed\u2026) tool free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free with no sign-up required."}}, {"@type": "Question", "name": "How accurate is the unit converter (length, weight, temperature, speed\u2026)?", "acceptedAnswer": {"@type": "Answer", "text": "We use the latest APIs and data sources updated in real time."}}, {"@type": "Question", "name": "Can I use this on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely \u2014 fully responsive, works on all devices."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "An internet connection is needed for live data."}}]}</script>
+
+  <!-- RELATED TOOLS HUB -->
+  <section class="py-12 px-4 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">🔧 More Free Tools</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+        <a data-slug="weather-forecast" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🌤<br>Weather</a>
+        <a data-slug="currency-converter" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">💱<br>Currency</a>
+        <a data-slug="time-zone-converter" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🕐<br>Time Zones</a>
+        <a data-slug="unit-converter" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">📐<br>Unit Convert</a>
+        <a data-slug="bmi-calorie-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">⚖️<br>BMI</a>
+        <a data-slug="body-fat-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">💪<br>Body Fat</a>
+        <a data-slug="calories-burned-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🔥<br>Cal Burned</a>
+        <a data-slug="diet-meal-planner" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🥗<br>Diet Plan</a>
+        <a data-slug="water-intake-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">💧<br>Water</a>
+        <a data-slug="sleep-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">😴<br>Sleep</a>
+        <a data-slug="mortgage-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🏠<br>Mortgage</a>
+        <a data-slug="loan-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">💳<br>Loan</a>
+        <a data-slug="compound-interest-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">📈<br>Invest</a>
+        <a data-slug="percentage-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">%<br>Percent</a>
+        <a data-slug="tip-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🍽<br>Tip Calc</a>
+        <a data-slug="countdown-timer" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">⏱<br>Countdown</a>
+        <a data-slug="age-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🎂<br>Age Calc</a>
+        <a data-slug="language-translator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🌍<br>Translator</a>
+        <a data-slug="scientific-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🔬<br>Sci Calc</a>
+        <a data-slug="internet-speed-test" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🚀<br>Speed Test</a>
+        <a data-slug="gpa-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">🎓<br>GPA Calc</a>
+        <a data-slug="due-date-calculator" class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200">👶<br>Due Date</a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-12 px-4">
+    <div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="font-bold text-xl mb-3">Unit Converter (Length, Weight, Temperature, Speed…)</div>
+        <p class="text-gray-400 text-sm">Convert all units: metric/imperial, temperature, speed, volume, area, data.</p>
+      </div>
+      <div>
+        <div class="font-bold mb-3">Quick Links</div>
+        <ul class="space-y-1 text-gray-400 text-sm">
+          <li><a href="#tool" class="hover:text-white">Use Tool</a></li>
+          <li><a href="#articles" class="hover:text-white">Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold mb-3">Legal</div>
+        <ul class="space-y-1 text-gray-400 text-sm">
+          <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white">Affiliate Disclosure</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
       © 2026 Unit Converter (Length, Weight, Temperature, Speed…). All rights reserved.
     </div>
-</footer>
-<script>
+  </footer>
+  <script>
   // ── Inter-tool link BASE_URL resolution ───────────────────────────────────
   // In production (served from domain root): links resolve to /slug/
   // When opened as local file (file:// protocol): links use relative ../slug/
@@ -802,8 +900,9 @@
     });
   })();
   </script>
-<!-- Scroll animations & dark mode -->
-<script>
+
+  <!-- Scroll animations & dark mode -->
+  <script>
   // Fade-up on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -833,9 +932,22 @@
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
     html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    // Also toggle Tailwind's class-based dark mode
+    html.classList.toggle('dark', !isDark);
     document.getElementById('theme-toggle').textContent = isDark ? '🌙 Dark' : '☀️ Light';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
     if (typeof _syncHubMenu === 'function') _syncHubMenu();
   }
+  // Restore saved theme on load
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark');
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = '☀️ Light';
+    }
+  })();
 
   // GDPR banner
   if (!localStorage.getItem('gdpr_ok')) {
