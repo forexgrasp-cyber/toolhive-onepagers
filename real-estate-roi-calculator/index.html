@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate ROI Calculator – Rental Income &amp; Investment – Free Online Tool</title>
+<meta content="Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment." name="description"/>
+<meta content="Real Estate ROI Calculator – Rental Income &amp; Investment – Free Online Tool" property="og:title"/>
+<meta content="Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="index, follow" name="robots"/>
+<meta content="2026-05-14" name="date"/>
+<link href="https://toolhive.app/real-estate-roi-calculator/" rel="canonical"/>
+<!-- Structured Data: WebApplication -->
+<script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Real Estate ROI Calculator – Rental Income & Investment",
+    "description":"Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment.",
+    "url":"/real-estate-roi-calculator/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "dateModified":"2026-05-14"
+  }</script>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"/"},
+      {"@type":"ListItem","position":2,"name":"Real Estate ROI Calculator – Rental Income & Investment","item":"/real-estate-roi-calculator/"}
+    ]
+  }</script>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<style>
+    :root {
+      --brand: #2563eb;
+      --brand-dark: #1e40af;
+      --brand-accent: #7c3aed;
+      --surface: #f9fafb;
+      --surface2: #f3f4f6;
+      --text: #111827;
+      --text2: #6b7280;
+    }
+    [data-theme="dark"] {
+      --surface: #0f172a;
+      --surface2: #1e293b;
+      --text: #f1f5f9;
+      --text2: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--surface); color: var(--text); transition: background .3s, color .3s; scroll-behavior: smooth; }
+    .brand-gradient { background: linear-gradient(135deg, var(--brand), var(--brand-accent)); }
+    .glass { backdrop-filter: blur(14px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+    /* ── Pulse CTA ── */
+    .cta-pulse { animation: ctaPulse 2.4s ease-in-out infinite; }
+    @keyframes ctaPulse {
+      0%,100% { transform:scale(1); box-shadow:0 0 0 0 rgba(37,99,235,.45); }
+      50%      { transform:scale(1.04); box-shadow:0 0 0 12px rgba(37,99,235,0); }
+    }
+    /* ── Floating ── */
+    .float-anim { animation: float 4s ease-in-out infinite; }
+    @keyframes float {
+      0%,100% { transform:translateY(0); }
+      50%      { transform:translateY(-12px); }
+    }
+    /* ── Shimmer skeleton ── */
+    .shimmer { background:linear-gradient(90deg,#e5e7eb 25%,#f9fafb 50%,#e5e7eb 75%); background-size:200% 100%; animation:shimmer 1.4s infinite; }
+    @keyframes shimmer { 0% {background-position:200% 0} 100% {background-position:-200% 0} }
+    /* ── Fade up ── */
+    .fade-up { opacity:0; transform:translateY(28px); transition:opacity .65s ease,transform .65s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+    /* ── Fade in ── */
+    .fade-in { opacity:0; transition:opacity .8s ease; }
+    .fade-in.visible { opacity:1; }
+    /* ── Slide right ── */
+    .slide-right { opacity:0; transform:translateX(-24px); transition:opacity .6s ease,transform .6s ease; }
+    .slide-right.visible { opacity:1; transform:translateX(0); }
+    /* ── Counter ── */
+    .counter { transition:all 1.6s ease-out; }
+    /* ── Glow ── */
+    .glow { box-shadow:0 0 20px rgba(37,99,235,.35), 0 0 40px rgba(124,58,237,.2); }
+    /* ── Gradient text ── */
+    .grad-text { background:linear-gradient(135deg,var(--brand),var(--brand-accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    /* ── Particles canvas ── */
+    #particles-canvas { position:absolute; inset:0; pointer-events:none; z-index:0; }
+    /* ── Hero overlay ── */
+    .hero-overlay { position:relative; overflow:hidden; }
+    /* ── Spinning ring ── */
+    .spin-ring { animation:spinRing 8s linear infinite; }
+    @keyframes spinRing { to { transform:rotate(360deg); } }
+    /* ── Progress bar fill ── */
+    .progress-fill { transition:width 1.4s cubic-bezier(.4,0,.2,1); }
+    /* ── Bounce in ── */
+    .bounce-in { animation:bounceIn .7s ease both; }
+    @keyframes bounceIn {
+      0% { transform:scale(.5); opacity:0; }
+      70% { transform:scale(1.08); opacity:1; }
+      100% { transform:scale(1); }
+    }
+    /* ── Typewriter ── */
+    .typewriter { overflow:hidden; white-space:nowrap; border-right:2px solid var(--brand); animation:typing 2.5s steps(30,end), blink .75s step-end infinite; }
+    @keyframes typing { from { width:0 } to { width:100% } }
+    @keyframes blink { 0%,100% { border-color:transparent } 50% { border-color:var(--brand); } }
+    /* ── Confetti piece ── */
+    .confetti-piece { position:absolute; width:8px; height:8px; border-radius:2px; animation:confettiFall var(--duration,3s) var(--delay,0s) ease-in forwards; }
+    @keyframes confettiFall {
+      0%   { transform:translateY(-20px) rotate(0deg); opacity:1; }
+      100% { transform:translateY(100vh) rotate(720deg); opacity:0; }
+    }
+    /* ── Bubble float ── */
+    .bubble { position:absolute; border-radius:50%; background:rgba(255,255,255,.12); animation:bubbleRise var(--dur,6s) var(--del,0s) ease-in infinite; }
+    @keyframes bubbleRise {
+      0%   { transform:translateY(0) scale(1); opacity:.6; }
+      100% { transform:translateY(-110%) scale(1.5); opacity:0; }
+    }
+    /* ── Water fill ── */
+    @keyframes waterFill { from { height:0 } to { height:var(--fill,60%); } }
+    /* ── Heartbeat ── */
+    .heartbeat { animation:heartbeat 1.4s ease-in-out infinite; }
+    @keyframes heartbeat {
+      0%,100% { transform:scale(1); }
+      14%      { transform:scale(1.2); }
+      28%      { transform:scale(1); }
+      42%      { transform:scale(1.15); }
+      70%      { transform:scale(1); }
+    }
+    /* ── News card ── */
+    .news-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,.1); }
+    .news-card { transition:transform .25s ease,box-shadow .25s ease; }
+    /* ── Affiliate card ── */
+    .aff-card { border:2px solid transparent; transition:border-color .2s,transform .2s; }
+    .aff-card:hover { border-color:var(--brand); transform:scale(1.02); }
+    /* ── Table zebra ── */
+    tr:nth-child(even) { background:rgba(37,99,235,.04); }
+    /* ── Tooltip ── */
+    .tip { position:relative; cursor:pointer; }
+    .tip::after { content:attr(data-tip); position:absolute; bottom:110%; left:50%; transform:translateX(-50%); background:#1e293b; color:#fff; font-size:.7rem; padding:4px 8px; border-radius:6px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; z-index:99; }
+    .tip:hover::after { opacity:1; }
+    /* ── Affiliate badge ── */
+    .affiliate-badge { background:#fbbf24; color:#111; font-size:.6rem; padding:1px 5px; border-radius:3px; vertical-align:middle; font-weight:700; }
+    /* ── Dark mode ── */
+    #theme-toggle { cursor:pointer; }
+    [data-theme="dark"] .bg-white { background:#1e293b !important; }
+    [data-theme="dark"] .text-gray-900 { color:#f1f5f9 !important; }
+    [data-theme="dark"] .text-gray-500 { color:#94a3b8 !important; }
+    [data-theme="dark"] .text-gray-600 { color:#94a3b8 !important; }
+    [data-theme="dark"] .text-gray-700 { color:#cbd5e1 !important; }
+    [data-theme="dark"] .text-gray-800 { color:#e2e8f0 !important; }
+    [data-theme="dark"] .bg-gray-50 { background:#0f172a !important; }
+    [data-theme="dark"] .bg-gray-100 { background:#1e293b !important; }
+    [data-theme="dark"] .bg-blue-50 { background:#1e3a5f !important; }
+    [data-theme="dark"] .text-blue-700 { color:#93c5fd !important; }
+    [data-theme="dark"] .border-gray-200 { border-color:#334155 !important; }
+    [data-theme="dark"] .shadow { box-shadow:0 2px 8px rgba(0,0,0,.5) !important; }
+    /* ── Language select fix: force native dropdown to show dark text on light bg ── */
+    #lang-select { color-scheme: normal; background-color: rgba(255,255,255,0.2); color: #fff; }
+    #lang-select option { background-color: #1e293b; color: #f1f5f9; }
+    /* ── Hub menu link text ── */
+    #hub-menu a { color: #1f2937; }
+    [data-theme="dark"] #hub-menu a { color: #e2e8f0; }
+    #hub-menu a:hover { color: #2563eb; }
+    [data-theme="dark"] #hub-menu a:hover { color: #93c5fd; }
+    /* ── Hub menu description tooltip text ── */
+    [data-theme="dark"] #hub-menu { background: #1e293b !important; }
+    /* ── Feature cards ── */
+    .feature-tag { background: #eff6ff; color: #1d4ed8; border-radius: .75rem; padding: .75rem; font-size: .875rem; font-weight: 500; text-align: center; }
+    [data-theme="dark"] .feature-tag { background: #1e3a5f !important; color: #93c5fd !important; }
+    /* ── Better input contrast ── */
+    input, select, textarea { color: #111827; }
+    [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea { color: #f1f5f9; }
+    /* ── FAQ / accordion visible text ── */
+    .faq-q-btn { color: #111827; }
+    [data-theme="dark"] .faq-q-btn { color: #f1f5f9 !important; }
+    .faq-answer { color: #374151; }
+    [data-theme="dark"] .faq-answer { color: #cbd5e1 !important; }
+    /* ── Section headings always visible ── */
+    section h2, section h3 { color: var(--text); }
+    /* ── Dark gradient sections — force white text on all children ── */
+    section[style*="background:linear-gradient"] h2,
+    section[style*="background:linear-gradient"] h3,
+    section[style*="background:linear-gradient"] p,
+    section[style*="background:linear-gradient"] label,
+    section[style*="background:linear-gradient"] span:not(.affiliate-badge) { color: inherit; }
+    /* ── Tool sections on white bg: dark text ── */
+    .tool-light-bg { background:#fff; }
+    .tool-light-bg h2, .tool-light-bg h3, .tool-light-bg label, .tool-light-bg p { color:#111827; }
+    [data-theme="dark"] .tool-light-bg { background:#1e293b !important; }
+    [data-theme="dark"] .tool-light-bg h2,[data-theme="dark"] .tool-light-bg h3,
+    [data-theme="dark"] .tool-light-bg label,[data-theme="dark"] .tool-light-bg p { color:#f1f5f9 !important; }
+    /* ── Visible result text inside dark tool panels ── */
+    .result-val { font-weight:800; }
+    /* ── Unit converter, food lookup inputs etc ── */
+    .tool-input { background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:.75rem; padding:.65rem 1rem; width:100%; transition:all .2s; }
+    .tool-input::placeholder { color:rgba(255,255,255,0.5); }
+    .tool-input:focus { outline:none; background:rgba(255,255,255,0.28); border-color:#fbbf24; }
+    /* ── Fancy animated gradient border on tool card ── */
+    .tool-card-glow { position:relative; }
+    .tool-card-glow::before { content:''; position:absolute; inset:-2px; border-radius:1.5rem; background:linear-gradient(135deg,rgba(255,255,255,0.35),rgba(255,255,255,0.05),rgba(255,255,255,0.35)); z-index:0; animation:borderSpin 4s linear infinite; }
+    @keyframes borderSpin { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%} }
+    /* ── Animated number flip ── */
+    .flip-in { animation:flipIn .4s cubic-bezier(.4,0,.2,1) both; }
+    @keyframes flipIn { 0% {transform:rotateX(-90deg);opacity:0} 100% {transform:rotateX(0);opacity:1} }
+    /* ── Stats section text ── */
+    .stats-label { color:#6b7280; }
+    [data-theme="dark"] .stats-label { color:#94a3b8 !important; }
+    /* ── Articles section ── */
+    .article-card h3 { color:#111827; }
+    [data-theme="dark"] .article-card h3 { color:#f1f5f9 !important; }
+    .article-card p { color:#6b7280; }
+    [data-theme="dark"] .article-card p { color:#94a3b8 !important; }
+    /* ── Related tools hub text ── */
+    .tool-hub-link { color:#374151 !important; }
+    [data-theme="dark"] .tool-hub-link { color:#e2e8f0 !important; }
+  </style>
+<link href="https://cdn.tailwindcss.com" rel="preconnect"/>
+  <link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+  <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <meta content="https://toolhive.app/real-estate-roi-calculator/" property="og:url"/>
+  <meta content="https://toolhive.app/og-default.png" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@toolhive_app" name="twitter:site"/>
+  <meta content="Real Estate ROI Calculator – Rental Income &amp; Investment – Free Online " name="twitter:title"/>
+  <meta content="Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment." name="twitter:description"/>
+  <meta content="https://toolhive.app/og-default.png" name="twitter:image"/>
+  <meta content="ToolHive" name="author"/>
+  <meta content="#2563eb" name="theme-color"/>
+  <link href="https://cdn.tailwindcss.com" rel="dns-prefetch"/>
+  <link href="https://cdn.jsdelivr.net" rel="dns-prefetch"/>
+  <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
+  </head>
+<body class="font-sans antialiased">
+<!-- NAV -->
+<nav class="sticky top-0 z-50 brand-gradient shadow-lg">
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
+<a class="text-white font-bold text-lg sm:text-xl tracking-tight" href="/">Real Estate ROI Calculator – Rental Income &amp; Investment</a>
+<div class="flex items-center gap-2 flex-wrap">
+<a class="text-white/90 hover:text-white text-sm font-medium" href="#tool">Tool</a>
+<a class="text-white/90 hover:text-white text-sm font-medium" href="#articles">Articles</a>
+<!-- Language selector -->
+<select class="text-xs rounded px-2 py-1 cursor-pointer border border-white/30" id="lang-select" onchange="switchLanguage(this.value)" style="background:rgba(255,255,255,0.2);color:#fff;color-scheme:normal;">
+<option style="background:#1e293b;color:#f1f5f9;" value="en">🌐 EN</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="es">🇪🇸 ES</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="de">🇩🇪 DE</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="fr">🇫🇷 FR</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="pt">🇧🇷 PT</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="it">🇮🇹 IT</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="ru">🇷🇺 RU</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="ar">🇸🇦 AR</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="zh">🇨🇳 ZH</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="ja">🇯🇵 JA</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="hi">🇮🇳 HI</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="pl">🇵🇱 PL</option>
+<option style="background:#1e293b;color:#f1f5f9;" value="uk">🇺🇦 UA</option>
+</select>
+<!-- Hamburger / Hub menu -->
+<div class="relative">
+<button class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1 font-medium" onclick="document.getElementById('hub-menu').classList.toggle('hidden')">
+            ☰ More Tools
+          </button>
+<div class="hidden absolute right-0 top-10 w-72 shadow-2xl rounded-2xl p-4 z-50 grid grid-cols-2 gap-2 text-sm" id="hub-menu" style="background:#fff;">
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/weather-forecast/">🌤 Weather</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/currency-converter/">💱 Currency</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/time-zone-converter/">🕐 Time Zones</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/unit-converter/">📐 Units</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/bmi-calorie-calculator/">⚖️ BMI</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/body-fat-calculator/">💪 Body Fat</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/calories-burned-calculator/">🔥 Cal. Burned</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/diet-meal-planner/">🥗 Diet Planner</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/water-intake-calculator/">💧 Water</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/sleep-calculator/">😴 Sleep</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/mortgage-calculator/">🏠 Mortgage</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/compound-interest-calculator/">📈 Investing</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/loan-calculator/">💳 Loan</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/percentage-calculator/">% Percentage</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/tip-calculator/">🍽 Tip</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/countdown-timer/">⏱ Countdown</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/age-calculator/">🎂 Age</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/gpa-calculator/">🎓 GPA</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/due-date-calculator/">👶 Due Date</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/language-translator/">🌍 Translator</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/scientific-calculator/">🔬 Sci. Calc</a>
+<a class="flex items-center gap-2 hover:bg-blue-50 rounded-lg p-2 font-medium" href="/internet-speed-test/">🚀 Speed Test</a>
+</div>
+</div>
+<button class="text-white/90 hover:text-white text-sm border border-white/30 rounded px-2 py-1" id="theme-toggle" onclick="toggleTheme()">
+          🌙 Dark
+        </button>
+</div>
+</div>
+</nav>
+<script>
+  // Sync hub-menu bg/text to current theme
+  function _syncHubMenu() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const menu = document.getElementById('hub-menu');
+    if (!menu) return;
+    menu.style.background = isDark ? '#1e293b' : '#fff';
+    menu.querySelectorAll('a').forEach(a => {
+      a.style.color = isDark ? '#e2e8f0' : '#1f2937';
+    });
+  }
+
+  // Close hub menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('hub-menu');
+    if (menu && !menu.parentElement.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+
+  // Geo-based language detection
+  (function() {
+    const saved = localStorage.getItem('preferred_lang');
+    if (saved) {
+      const sel = document.getElementById('lang-select');
+      if (sel) sel.value = saved;
+      if (saved !== 'en') applyPageTranslation(saved);
+      return;
+    }
+    const lang = (navigator.language || navigator.userLanguage || 'en').slice(0,2).toLowerCase();
+    const supported = ['en','es','de','fr','pt','it','ru','ar','zh','ja','hi','pl','uk'];
+    if (supported.includes(lang)) {
+      const sel = document.getElementById('lang-select');
+      if (sel) sel.value = lang;
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(d => {
+          const countryLangMap = {
+            'DE':'de','FR':'fr','ES':'es','MX':'es','AR':'es','PT':'pt','BR':'pt',
+            'IT':'it','RU':'ru','UA':'uk','PL':'pl','CN':'zh','JP':'ja','IN':'hi',
+            'SA':'ar','AE':'ar','EG':'ar'
+          };
+          const detected = countryLangMap[d.country_code] || lang;
+          if (sel) sel.value = detected;
+          localStorage.setItem('preferred_lang', detected);
+          localStorage.setItem('user_country', d.country_code || '');
+          if (detected !== 'en') applyPageTranslation(detected);
+        })
+        .catch(() => { if (lang !== 'en') applyPageTranslation(lang); });
+    }
+  })();
+
+  function switchLanguage(lang) {
+    localStorage.setItem('preferred_lang', lang);
+    if (lang === 'en') { location.reload(); return; }
+    applyPageTranslation(lang);
+  }
+
+  function applyPageTranslation(lang) {
+    // Translate all visible text content: headings, paragraphs, labels, badges, stats labels
+    const selector = [
+      'h1','h2','h3','h4',
+      'p:not(.no-translate)',
+      'label',
+      '.hero-desc',
+      '.stat-label',
+      '.feature-tag',
+      '.section-sub',
+      'th',
+      '.faq-question-text',
+      'footer li a',
+      '.nav-link-text'
+    ].join(', ');
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+      const txt = el.dataset.orig || el.textContent.trim();
+      if (!txt || txt.length < 3) return;
+      el.dataset.orig = txt;
+      fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(txt.slice(0,500))}&langpair=en|${lang}`)
+        .then(r => r.json())
+        .then(d => { if (d.responseData && d.responseData.translatedText) el.textContent = d.responseData.translatedText; })
+        .catch(() => {});
+    });
+    // Translate placeholder attributes
+    document.querySelectorAll('[placeholder]').forEach(el => {
+      const txt = el.dataset.origPlaceholder || el.getAttribute('placeholder');
+      if (!txt || txt.length < 3) return;
+      el.dataset.origPlaceholder = txt;
+      fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(txt.slice(0,200))}&langpair=en|${lang}`)
+        .then(r => r.json())
+        .then(d => { if (d.responseData && d.responseData.translatedText) el.setAttribute('placeholder', d.responseData.translatedText); })
+        .catch(() => {});
+    });
+    // RTL adjustment for Arabic
+    if (lang === 'ar') document.body.setAttribute('dir', 'rtl');
+    else document.body.removeAttribute('dir');
+  }
+  </script>
+<!-- HERO -->
+<section class="brand-gradient text-white py-16 sm:py-20 px-4 text-center animate__animated animate__fadeIn">
+<div class="max-w-4xl mx-auto">
+<div class="text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4 opacity-80">Free Online Tool</div>
+<h1 class="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight">Real Estate ROI Calculator – Rental Income &amp; Investment</h1>
+<p class="text-base sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto hero-desc">Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment.</p>
+<div class="flex flex-wrap justify-center gap-3 mb-8">
+<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ 100% Free</span>
+<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ No Sign-up</span>
+<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Real-time Data</span>
+<span class="bg-white/20 rounded-full px-4 py-1 text-sm feature-tag" style="background:rgba(255,255,255,0.2);color:#fff;">✓ Better than zillow.com</span>
+</div>
+<a class="cta-pulse inline-block bg-white text-blue-700 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg shadow-xl" href="#tool">
+        Use Free Tool ↓
+      </a>
+</div>
+</section>
+<!-- STATS BAR -->
+<section class="bg-white dark:bg-gray-800 shadow-sm py-8">
+<div class="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center px-4">
+<div class="fade-up">
+<div class="text-4xl font-extrabold text-blue-600 counter" data-target="1800K+">0</div>
+<div class="text-sm text-gray-500 mt-1">Monthly Users</div>
+</div>
+<div class="fade-up">
+<div class="text-4xl font-extrabold text-green-500 counter" data-target="4.9★">0</div>
+<div class="text-sm text-gray-500 mt-1">User Rating</div>
+</div>
+<div class="fade-up">
+<div class="text-4xl font-extrabold text-purple-500 counter" data-target="24/7">-</div>
+<div class="text-sm text-gray-500 mt-1">Live Updates</div>
+</div>
+</div>
+</section>
+<section class="py-16 px-4" id="tool" style="background:linear-gradient(145deg,#14532d 0%,#1a4731 50%,#1c4a6e 100%);">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white text-center mb-2">🏘 Real Estate ROI Calculator</h2>
+<p class="text-white/80 text-center mb-8">Rental yield, cash flow, cap rate &amp; investment return</p>
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="rounded-3xl p-6" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.2);">
+<div class="mb-3"><label class="text-white/80 text-sm font-semibold block mb-1">🏡 Property Price ($)</label>
+<input class="w-full rounded-xl px-4 py-3 bg-white/15 text-white border border-white/20 focus:border-green-400 focus:outline-none transition" id="re-price" oninput="calcRE()" type="number" value="350000"/></div>
+<div class="mb-3"><label class="text-white/80 text-sm font-semibold block mb-1">💰 Down Payment (%)</label>
+<input class="w-full rounded-xl px-4 py-3 bg-white/15 text-white border border-white/20 focus:border-green-400 focus:outline-none transition" id="re-down" oninput="calcRE()" type="number" value="20"/></div>
+<div class="mb-3"><label class="text-white/80 text-sm font-semibold block mb-1">🏠 Monthly Rent ($)</label>
+<input class="w-full rounded-xl px-4 py-3 bg-white/15 text-white border border-white/20 focus:border-green-400 focus:outline-none transition" id="re-rent" oninput="calcRE()" type="number" value="2200"/></div>
+<div class="mb-3"><label class="text-white/80 text-sm font-semibold block mb-1">🔧 Monthly Expenses ($)</label>
+<input class="w-full rounded-xl px-4 py-3 bg-white/15 text-white border border-white/20 focus:border-green-400 focus:outline-none transition" id="re-expenses" oninput="calcRE()" type="number" value="600"/></div>
+<div class="mb-3"><label class="text-white/80 text-sm font-semibold block mb-1">📊 Mortgage Rate (%)</label>
+<input class="w-full rounded-xl px-4 py-3 bg-white/15 text-white border border-white/20 focus:border-green-400 focus:outline-none transition" id="re-rate" oninput="calcRE()" step="0.1" type="number" value="6.5"/></div>
+</div>
+<div class="rounded-3xl p-6 flex flex-col gap-3" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);">
+<div class="grid grid-cols-2 gap-3">
+<div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.08);"><div class="text-white/60 text-xs">Gross Yield</div><div class="text-2xl font-extrabold text-yellow-400" id="re-gross">—%</div></div>
+<div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.08);"><div class="text-white/60 text-xs">Net Yield</div><div class="text-2xl font-extrabold text-green-400" id="re-net">—%</div></div>
+<div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.08);"><div class="text-white/60 text-xs">Monthly Cash Flow</div><div class="text-2xl font-extrabold text-blue-300" id="re-cashflow">$—</div></div>
+<div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.08);"><div class="text-white/60 text-xs">Cap Rate</div><div class="text-2xl font-extrabold text-purple-300" id="re-cap">—%</div></div>
+<div class="rounded-xl p-3 text-center col-span-2" style="background:rgba(255,255,255,0.08);"><div class="text-white/60 text-xs">Cash-on-Cash Return</div><div class="text-2xl font-extrabold text-emerald-300" id="re-coc">—%</div></div>
+</div>
+<canvas class="mt-2" height="140" id="re-chart"></canvas>
+</div>
+</div>
+<div class="mt-6 rounded-2xl p-4 text-center" style="background:rgba(255,255,255,0.06);">
+<div class="flex flex-wrap gap-3 justify-center">
+<a class="bg-emerald-500 text-white font-bold px-6 py-2 rounded-full text-sm hover:bg-emerald-400 transition" href="https://fundrise.com" rel="noopener sponsored" target="_blank">🏠 Invest from $10 — Fundrise <span class="affiliate-badge">AD</span></a>
+<a class="bg-yellow-400 text-black font-bold px-6 py-2 rounded-full text-sm hover:bg-yellow-300 transition" href="https://www.lendingtree.com/home/mortgage/" rel="noopener sponsored" target="_blank">🏦 Compare Mortgage Rates <span class="affiliate-badge">AD</span></a>
+</div>
+</div>
+</div>
+</section>
+<script>
+  function calcRE(){{
+    const price=parseFloat(document.getElementById('re-price').value)||350000;
+    const downPct=parseFloat(document.getElementById('re-down').value)||20;
+    const rent=parseFloat(document.getElementById('re-rent').value)||2200;
+    const expenses=parseFloat(document.getElementById('re-expenses').value)||600;
+    const rate=parseFloat(document.getElementById('re-rate').value)||6.5;
+    const down=price*downPct/100; const loan=price-down;
+    const r=rate/100/12; const n=360;
+    const mortgage=r>0?(loan*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1):loan/360;
+    const annualRent=rent*12; const annualNOI=(rent-expenses)*12;
+    document.getElementById('re-gross').textContent=(annualRent/price*100).toFixed(2)+'%';
+    document.getElementById('re-net').textContent=(annualNOI/price*100).toFixed(2)+'%';
+    document.getElementById('re-cashflow').textContent='$'+Math.round(rent-expenses-mortgage).toLocaleString();
+    document.getElementById('re-cap').textContent=(annualNOI/price*100).toFixed(2)+'%';
+    document.getElementById('re-coc').textContent=((rent-expenses-mortgage)*12/down*100).toFixed(2)+'%';
+    const ctx=document.getElementById('re-chart').getContext('2d');
+    if(window._reChart)window._reChart.destroy();
+    const yrs=[1,2,3,5,10];
+    window._reChart=new Chart(ctx,{{type:'line',data:{{labels:yrs.map(y=>'Yr '+y),datasets:[{{label:'Property Value',data:yrs.map(y=>Math.round(price*Math.pow(1.04,y)/1000)),borderColor:'#86efac',backgroundColor:'rgba(134,239,172,0.1)',fill:true,tension:.4}}]}},options:{{plugins:{{legend:{{labels:{{color:'#fff'}}}}}},scales:{{x:{{ticks:{{color:'#aaa'}}}},y:{{ticks:{{color:'#aaa',callback:v=>v+'K'}}}}}}}}}});
+  }}
+  window.addEventListener('DOMContentLoaded',calcRE);
+  </script>
+<!-- ENTERTAINMENT / FUN FACTS -->
+<section class="py-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-2">🤩 Did You Know?</h2>
+<p class="text-center text-gray-500 mb-8">Fascinating facts about real estate roi calculator – rental income &amp; investment</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">💡</span><p class="text-sm text-gray-600 dark:text-gray-300">The global market for real estate roi calculator – rental income &amp; investment tools generates billions in annual value.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🔍</span><p class="text-sm text-gray-600 dark:text-gray-300">Online tools save the average user over 2 hours per week on calculations.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">📱</span><p class="text-sm text-gray-600 dark:text-gray-300">Mobile users now account for over 60% of all web tool usage.</p></div><div class="fade-up bg-white dark:bg-gray-700 rounded-xl p-4 flex gap-3 shadow-sm"><span class="text-2xl">🌐</span><p class="text-sm text-gray-600 dark:text-gray-300">Free online tools are used by over 3 billion people worldwide every month.</p></div>
+</div>
+</div>
+</section>
+<!-- ARTICLES / NEWS -->
+<section class="py-16 px-4 max-w-5xl mx-auto" id="articles">
+<h2 class="text-3xl font-bold text-center mb-2">📚 Guides &amp; Articles</h2>
+<p class="text-center text-gray-500 dark:text-gray-400 mb-8">Expert knowledge to get the most from real estate roi calculator – rental income &amp; investment</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up">
+<div class="p-5">
+<div class="text-xs text-blue-600 font-semibold mb-2 uppercase tracking-wide">Guide</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">The Ultimate Guide to Real Estate ROI Calculator – Rental Income &amp; Investment</h3>
+<p class="text-gray-500 text-sm mb-3">Covers everything you need to know from basics to advanced.</p>
+<a class="text-blue-600 text-sm font-medium hover:underline" href="#articles">Read more →</a>
+</div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up">
+<div class="p-5">
+<div class="text-xs text-blue-600 font-semibold mb-2 uppercase tracking-wide">Tips</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">Top 10 Tips for Real Estate ROI Calculator – Rental Income</h3>
+<p class="text-gray-500 text-sm mb-3">Expert advice compiled from industry professionals.</p>
+<a class="text-blue-600 text-sm font-medium hover:underline" href="#articles">Read more →</a>
+</div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up">
+<div class="p-5">
+<div class="text-xs text-blue-600 font-semibold mb-2 uppercase tracking-wide">How-To</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">How to Get the Most Out of Real Estate ROI Calculator – Rental Income</h3>
+<p class="text-gray-500 text-sm mb-3">Step-by-step walkthrough for beginners.</p>
+<a class="text-blue-600 text-sm font-medium hover:underline" href="#articles">Read more →</a>
+</div>
+</article>
+<article class="bg-white dark:bg-gray-800 rounded-xl shadow news-card fade-up">
+<div class="p-5">
+<div class="text-xs text-blue-600 font-semibold mb-2 uppercase tracking-wide">Comparison</div>
+<h3 class="font-bold text-gray-900 dark:text-white mb-2">Why Free Tools Beat Paid Ones for Real Estate ROI Calculator – Rental Income</h3>
+<p class="text-gray-500 text-sm mb-3">A data-driven comparison of free vs paid solutions.</p>
+<a class="text-blue-600 text-sm font-medium hover:underline" href="#articles">Read more →</a>
+</div>
+</article></div>
+</section>
+<!-- FAQ -->
+<section class="py-16 px-4 max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+<div>
+<div class="border-b dark:border-gray-700 pb-4">
+<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
+<span class="text-gray-800 dark:text-white">Is this real estate roi calculator – rental income &amp; investment tool free?</span>
+<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+</button>
+<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Yes, 100% free with no sign-up required.</p>
+</div>
+<div class="border-b dark:border-gray-700 pb-4">
+<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
+<span class="text-gray-800 dark:text-white">How accurate is the real estate roi calculator – rental income &amp; investment?</span>
+<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+</button>
+<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">We use the latest APIs and data sources updated in real time.</p>
+</div>
+<div class="border-b dark:border-gray-700 pb-4">
+<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
+<span class="text-gray-800 dark:text-white">Can I use this on mobile?</span>
+<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+</button>
+<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">Absolutely — fully responsive, works on all devices.</p>
+</div>
+<div class="border-b dark:border-gray-700 pb-4">
+<button class="faq-q-btn flex w-full justify-between items-center text-left font-semibold py-4" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.querySelector('.faq-icon').textContent === '+' ? '−' : '+'">
+<span class="text-gray-800 dark:text-white">Does it work offline?</span>
+<span class="faq-icon text-blue-600 text-xl font-bold ml-2">+</span>
+</button>
+<p class="faq-answer hidden text-gray-600 dark:text-gray-300 text-sm pb-2 leading-relaxed">An internet connection is needed for live data.</p>
+</div></div>
+</section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this real estate roi calculator \u2013 rental income & investment tool free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free with no sign-up required."}}, {"@type": "Question", "name": "How accurate is the real estate roi calculator \u2013 rental income & investment?", "acceptedAnswer": {"@type": "Answer", "text": "We use the latest APIs and data sources updated in real time."}}, {"@type": "Question", "name": "Can I use this on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely \u2014 fully responsive, works on all devices."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "An internet connection is needed for live data."}}]}</script>
+<!-- RELATED TOOLS HUB -->
+<section class="py-12 px-4 bg-gray-50 dark:bg-gray-900">
+<div class="max-w-5xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">🔧 More Free Tools</h2>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="weather-forecast">🌤<br/>Weather</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="currency-converter">💱<br/>Currency</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="time-zone-converter">🕐<br/>Time Zones</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="unit-converter">📐<br/>Unit Convert</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="bmi-calorie-calculator">⚖️<br/>BMI</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="body-fat-calculator">💪<br/>Body Fat</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="calories-burned-calculator">🔥<br/>Cal Burned</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="diet-meal-planner">🥗<br/>Diet Plan</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="water-intake-calculator">💧<br/>Water</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="sleep-calculator">😴<br/>Sleep</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="mortgage-calculator">🏠<br/>Mortgage</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="loan-calculator">💳<br/>Loan</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="compound-interest-calculator">📈<br/>Invest</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="percentage-calculator">%<br/>Percent</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="tip-calculator">🍽<br/>Tip Calc</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="countdown-timer">⏱<br/>Countdown</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="age-calculator">🎂<br/>Age Calc</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="language-translator">🌍<br/>Translator</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="scientific-calculator">🔬<br/>Sci Calc</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="internet-speed-test">🚀<br/>Speed Test</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="gpa-calculator">🎓<br/>GPA Calc</a>
+<a class="tool-hub-link bg-white dark:bg-gray-800 rounded-xl p-3 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition text-sm font-medium text-gray-700 dark:text-gray-200" data-slug="due-date-calculator">👶<br/>Due Date</a>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12 px-4">
+<div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8">
+<div>
+<div class="font-bold text-xl mb-3">Real Estate ROI Calculator – Rental Income &amp; Investment</div>
+<p class="text-gray-400 text-sm">Calculate rental yield, ROI, cash flow, cap rate and return on your real estate investment.</p>
+</div>
+<div>
+<div class="font-bold mb-3">Quick Links</div>
+<ul class="space-y-1 text-gray-400 text-sm">
+<li><a class="hover:text-white" href="#tool">Use Tool</a></li>
+<li><a class="hover:text-white" href="#articles">Articles</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold mb-3">Legal</div>
+<ul class="space-y-1 text-gray-400 text-sm">
+<li><a class="hover:text-white" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white" href="#">Affiliate Disclosure</a></li>
+<li><a class="hover:text-white" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+      © 2026 Real Estate ROI Calculator – Rental Income &amp; Investment. All rights reserved.
+    </div>
+</footer>
+<script>
+  // ── Inter-tool link BASE_URL resolution ───────────────────────────────────
+  // In production (served from domain root): links resolve to /slug/
+  // When opened as local file (file:// protocol): links use relative ../slug/
+  // When served via local dev server at 8080: links use /slug/ (same as prod)
+  (function() {
+    const isFileProtocol = window.location.protocol === 'file:';
+    const base = isFileProtocol ? '../' : '/';
+    document.querySelectorAll('a[data-slug]').forEach(function(a) {
+      a.href = base + a.getAttribute('data-slug') + '/';
+    });
+    // Also fix nav hub-menu links
+    document.querySelectorAll('#hub-menu a[href]').forEach(function(a) {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('/') && isFileProtocol) {
+        a.href = '../' + href.slice(1);
+      }
+    });
+  })();
+  </script>
+<!-- Scroll animations & dark mode -->
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Counter animation
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = el.dataset.target;
+    if (!target || isNaN(parseFloat(target))) {
+      setTimeout(() => { el.textContent = target; }, 600);
+      return;
+    }
+    let current = 0;
+    const end = parseFloat(target);
+    const suffix = target.replace(/[0-9.]/g,'');
+    const step = end / 50;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= end) { current = end; clearInterval(timer); }
+      el.textContent = Math.round(current) + suffix;
+    }, 30);
+  });
+
+  // Dark mode toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('theme-toggle').textContent = isDark ? '🌙 Dark' : '☀️ Light';
+    if (typeof _syncHubMenu === 'function') _syncHubMenu();
+  }
+
+  // GDPR banner
+  if (!localStorage.getItem('gdpr_ok')) {
+    const banner = document.createElement('div');
+    banner.id = 'gdpr';
+    banner.className = 'fixed bottom-0 left-0 right-0 bg-gray-900 text-white text-sm py-4 px-6 flex items-center justify-between z-50 shadow-2xl';
+    banner.innerHTML = `<span>🍪 We use cookies to improve your experience. <a href="#" class="underline text-blue-300">Learn more</a></span>
+      <button onclick="document.getElementById('gdpr').remove(); localStorage.setItem('gdpr_ok','1')"
+        class="ml-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-medium whitespace-nowrap">Accept</button>`;
+    document.body.appendChild(banner);
+  }
+  </script>
+</body>
+</html>
